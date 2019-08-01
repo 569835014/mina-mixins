@@ -1,10 +1,10 @@
-const toString=Object.toString
+const toString = Object.prototype.toString
 export function isPlainObject(val: any): val is Object {
   return toString.call(val) === '[object Object]'
 }
 export function isArray(val: any): val is Array<any> {
-  if(Array.isArray){
-    return  Array.isArray(val);
+  if (Array.isArray) {
+    return Array.isArray(val)
   }
   return toString.call(val) === '[object Array]'
 }

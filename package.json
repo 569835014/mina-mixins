@@ -1,8 +1,11 @@
 {
   "name": "mina-mixins",
-  "version": "0.0.8",
+  "version": "0.1.2",
   "description": "zm",
-  "keywords": ["mixins","小程序"],
+  "keywords": [
+    "mixins",
+    "小程序"
+  ],
   "main": "dist/mina-mixins.umd.js",
   "module": "dist/mina-mixins.es5.js",
   "typings": "dist/types/mina-mixins.d.ts",
@@ -32,7 +35,9 @@
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "precommit": "lint-staged",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "prepush": "npm run test:prod && npm run build",
+    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [

@@ -1,4 +1,4 @@
-export type LifecylceType =
+export type LifecycleType =
   | 'onLoad'
   | 'onShow'
   | 'onReady'
@@ -9,58 +9,84 @@ export type LifecylceType =
   | 'onPullDownRefresh'
   | 'onReachBottom'
   | 'onShareAppMessage'
-
-export interface Lifecylce<T> {
+export type AssetsType = 'data' | 'events' | 'customData'
+export interface Lifecycle<T> {
   onLoad?: T
   onShow?: T
   onReady?: T
   onHide?: T
-  onUnload?:T
+  onUnload?: T
   onTitleClick?: T
-  onPullDownRefresh?:T
+  onPullDownRefresh?: T
   onReachBottom?: T
   onShareAppMessage?: T
 }
+
 export interface PageData {
-  [propName:string]:any
+  [propName: string]: any
 }
+
 export interface PageEvent {
-  [propName:string]:()=>any
+  [propName: string]: () => any
 }
+
 export interface CustomData {
-  [propName:string]:any
+  [propName: string]: any
 }
-export interface LifecylceArrayType extends Lifecylce<Array<()=>void>>{
-  [propName:string]:any
-}
-export interface PageType extends Lifecylce<Array<()=>void>>{
-  data?: Array<PageData>
-  events?: Array<PageEvent>
-  customData?:Array<CustomData>
-  [propName:string]:any
-}
+export type AssetsValueType = PageData | PageEvent | CustomData
 export interface Assets {
   data?: PageData
   events?: PageEvent
-  customData?:CustomData
-  [propName:string]:any
-}
-export interface PageOptions extends Lifecylce<()=>void>,Assets {
-  mixins?:Array<PageOptions>
-  [propName:string]:any
-}
-export interface Page {
-  (options:PageOptions):any
-}
-export interface MinaMixins {
-  extend(page:Page):Page
-  lifestylesMixin?:(key: string, options: PageOptions, lifecylceArray: Array<Function>)=>void
-  assetsMixin?:(key: string, options: PageOptions, lifecylceArray: Array<Assets>)=>void
-  lifecylceMixinExtend?:(options: PageOptions, mixins: LifecylceArrayType)=>void
+  customData?: CustomData
+
+  [propName: string]: any
 }
 
-export interface MinaMixinsStatic {
-  minaMixins: MinaMixins
-  lifestyles: Array<LifecylceType>
-  use: (page:Page) => Page
+export interface Options extends Lifecycle<() => void>, Assets {}
+
+export interface PageOptions extends Options {
+  mixins?: Array<Options>
+  [propName: string]: any
+}
+
+export interface Page {
+  (options: PageOptions): any
+}
+
+export interface LifecycleArrayType extends Lifecycle<Array<() => void>> {
+  [propName: string]: any
+}
+
+export interface PageType extends Lifecycle<Array<() => void>> {
+  data?: Array<PageData>
+  events?: Array<PageEvent>
+  customData?: Array<CustomData>
+
+  [propName: string]: any
+}
+
+export interface IMixinStrategy {
+  lifecycleStrategy(prop: LifecycleType, options: Options, lifecycleArray: Array<Function>): void
+  assetsStrategy(prop: AssetsType, options: Options, assetsArray: Array<Assets>): void
+  customStrategy(prop: string, options: Options, customArray: Array<any>): void
+}
+
+export interface IMixin extends IMixinStrategy {
+  extend(page: Page): Page
+  strategy(options: PageOptions): PageOptions
+  use(strategy: IMixinStrategy): void
+}
+
+export interface MinaMixins {
+  extend(page: Page): Page
+
+  lifecycleStrategy(
+    prop: LifecycleType,
+    options: PageOptions,
+    lifecycleArray: Array<Function>
+  ): void
+
+  lifestylesMixin?: (key: string, options: PageOptions, lifecycleArray: Array<Function>) => void
+  assetsMixin?: (key: string, options: PageOptions, lifecycleArray: Array<Assets>) => void
+  lifecycleMixinExtend?: (options: PageOptions, mixins: LifecycleArrayType) => void
 }
