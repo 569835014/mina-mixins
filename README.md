@@ -27,7 +27,6 @@ Page({
 ````javascript
 import minaMixins from 'mina-mixins'
 Page(minaMixins.strategy({
-//TODO
 mixins:[mixin1,mixin2]
 }))
 ````
@@ -49,6 +48,6 @@ minaMixins.use({
 
 | 名称       | 类型    |  描述  | 备注 |
     | --------   | -----:   | :----: | :----:|
-    | prop        | string      |   配置项的key名称    | 列如生命周期策略里key为生命周期名称|
-    | options        | object      |   当前页面的配置    |  -
-    |    mixinArray     | Array      |   同名的配置混合后的数组    | 如：onHide混合和页面一共出现5次值[f,f,f,f,f]得函数数组
+    | prop        | string      |   配置项的key名称    | 列如生命周期策略里key为生命周期名称 |
+    | options        | object      |   当前页面的配置    |  - |
+    |    mixinArray     | Array      |   同名的配置混合后的数组    | 如：onHide混合和页面一共出现5次值[f,f,f,f,f]得函数数组 |
