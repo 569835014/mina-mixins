@@ -37,9 +37,9 @@ const MixinStrategy: IMixinStrategy = {
     }
   },
   assetsStrategy(prop: AssetsType, options: Options, assetsArray: Array<AssetsValueType>): void {
-    const pageAssets = options[prop]
+    const pageAssets: AssetsValueType | undefined = options[prop]
     if (pageAssets) {
-      assetsArray.push(pageAssets)
+      assetsArray.push(pageAssets as AssetsValueType)
     }
 
     let page: object = {}
@@ -56,7 +56,11 @@ const MixinStrategy: IMixinStrategy = {
 
     let page: object = {}
     customArray.forEach(custom => {
-      page = deepMerge(page, custom)
+      if (typeof custom !== 'object') {
+        page = custom
+      } else {
+        page = deepMerge(page, custom)
+      }
     })
     options[prop] = page
   }
@@ -102,7 +106,6 @@ class Mixin implements IMixin {
     delete options.mixins
     return options
   }
-
   use(strategy: IMixinStrategy): void {
     this.lifecycleStrategy = strategy.lifecycleStrategy
     this.assetsStrategy = strategy.assetsStrategy
