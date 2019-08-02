@@ -26,7 +26,7 @@ const lifecycleProp: Array<LifecycleType> = [
 const MixinStrategy: IMixinStrategy = {
   lifecycleStrategy(prop: LifecycleType, options: Options, lifecycleArray: Array<Function>): void {
     const pageLifecycle = options[prop]
-    if (pageLifecycle && typeof pageLifecycle === 'function') {
+    if (typeof pageLifecycle === 'function') {
       lifecycleArray.push(options[prop] as () => void)
     }
     // 同名生命周期函数全部触发
@@ -39,7 +39,7 @@ const MixinStrategy: IMixinStrategy = {
   assetsStrategy(prop: AssetsType, options: Options, assetsArray: Array<AssetsValueType>): void {
     const pageAssets: AssetsValueType | undefined = options[prop]
     if (pageAssets) {
-      assetsArray.push(pageAssets as AssetsValueType)
+      assetsArray.push(pageAssets)
     }
 
     let page: object = {}
