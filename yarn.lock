@@ -3247,8 +3247,9 @@ husky@^1.0.1:
     slash "^2.0.0"
 
 i@0.3.x:
-  version "0.3.6"
-  resolved "https://registry.npmjs.org/i/-/i-0.3.6.tgz#d96c92732076f072711b6b10fd7d4f65ad8ee23d"
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/i/-/i-0.3.7.tgz#2a7437a923d59c14b17243dc63a549af24d85799"
+  integrity sha512-FYz4wlXgkQwIPqhzC5TdNMLSE5+GS1IIDJZY/1ZiEPCT2S3COUVZeT5OW4BmW4r5LHLQuOosSwsvnroG9GR59Q==
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
@@ -5437,11 +5438,6 @@ octokit-pagination-methods@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/octokit-pagination-methods/-/octokit-pagination-methods-1.1.0.tgz#cf472edc9d551055f9ef73f6e42b4dbb4c80bea4"
 
-ometa@0.2.2:
-  version "0.2.2"
-  resolved "https://registry.npm.taobao.org/ometa/download/ometa-0.2.2.tgz#f53c4735ba6d56af5a46b04dfb7c4334c596d44e"
-  integrity sha1-9TxHNbptVq9aRrBN+3xDNMWW1E4=
-
 once@^1.3.0, once@^1.3.1, once@^1.4.0, once@~1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
@@ -6515,13 +6511,6 @@ sane@^2.0.0:
 sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
-
-scss@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.npm.taobao.org/scss/download/scss-0.2.4.tgz#040d903ed37c5d4fa4ad33ae1fd389ac12a4e065"
-  integrity sha1-BA2QPtN8XU+krTOuH9OJrBKk4GU=
-  dependencies:
-    ometa "0.2.2"
 
 semantic-release@^15.9.16:
   version "15.13.16"
