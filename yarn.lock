@@ -5045,8 +5045,11 @@ node-fetch-npm@^2.0.2:
     safe-buffer "^5.1.1"
 
 node-fetch@^2.3.0:
-  version "2.6.0"
-  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
+  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
+  dependencies:
+    whatwg-url "^5.0.0"
 
 node-gyp@^3.8.0:
   version "3.8.0"
@@ -5436,11 +5439,6 @@ object.pick@^1.3.0:
 octokit-pagination-methods@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/octokit-pagination-methods/-/octokit-pagination-methods-1.1.0.tgz#cf472edc9d551055f9ef73f6e42b4dbb4c80bea4"
-
-ometa@0.2.2:
-  version "0.2.2"
-  resolved "https://registry.npm.taobao.org/ometa/download/ometa-0.2.2.tgz#f53c4735ba6d56af5a46b04dfb7c4334c596d44e"
-  integrity sha1-9TxHNbptVq9aRrBN+3xDNMWW1E4=
 
 once@^1.3.0, once@^1.3.1, once@^1.4.0, once@~1.4.0:
   version "1.4.0"
@@ -6516,13 +6514,6 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-scss@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.npm.taobao.org/scss/download/scss-0.2.4.tgz#040d903ed37c5d4fa4ad33ae1fd389ac12a4e065"
-  integrity sha1-BA2QPtN8XU+krTOuH9OJrBKk4GU=
-  dependencies:
-    ometa "0.2.2"
-
 semantic-release@^15.9.16:
   version "15.13.16"
   resolved "https://registry.npmjs.org/semantic-release/-/semantic-release-15.13.16.tgz#568b388790e5670acebcc6866113c37fbd968458"
@@ -7178,6 +7169,11 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
+tr46@~0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
+  integrity sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
+
 traverse@~0.6.6:
   version "0.6.6"
   resolved "https://registry.npmjs.org/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
@@ -7571,6 +7567,11 @@ wcwidth@^1.0.0:
   dependencies:
     defaults "^1.0.3"
 
+webidl-conversions@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
+  integrity sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=
+
 webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
@@ -7584,6 +7585,14 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
 whatwg-mimetype@^2.1.0, whatwg-mimetype@^2.2.0:
   version "2.3.0"
   resolved "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz#3d4b1e0312d2079879f826aff18dbeeca5960fbf"
+
+whatwg-url@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-5.0.0.tgz#966454e8765462e37644d3626f6742ce8b70965d"
+  integrity sha1-lmRU6HZUYuN2RNNib2dCzotwll0=
+  dependencies:
+    tr46 "~0.0.3"
+    webidl-conversions "^3.0.0"
 
 whatwg-url@^6.4.1:
   version "6.5.0"
